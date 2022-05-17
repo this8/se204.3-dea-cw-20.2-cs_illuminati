@@ -4,8 +4,11 @@
  */
 package com.phoenixairline.controllers;
 
+import com.phoenixairline.models.ViewUsersDao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,9 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author thisura
+ * @author yasas
  */
-public class AddFlightInfoServlet extends HttpServlet {
+public class ViewUsersServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,10 +37,10 @@ public class AddFlightInfoServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AddFlightInfoServlet</title>");
+            out.println("<title>Servlet ViewUsersServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet AddFlightInfoServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ViewUsersServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -69,7 +72,16 @@ public class AddFlightInfoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String su = request.getParameter("search_username");
+
+        ViewUsersDao vuDao = new ViewUsersDao();
+        List userlist = vuDao.viewRow(su);
+
+        request.setAttribute("result", userlist);
+
+        RequestDispatcher rd = request.getRequestDispatcher("views/admin_result.jsp");
+        rd.forward(request, response);
+
     }
 
     /**

@@ -9,5 +9,5 @@ package com.phoenixairline.models;
  * @author thisura
  */
 public class Flight {
-    
+
 }

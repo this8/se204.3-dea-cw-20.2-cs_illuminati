@@ -1,4 +1,4 @@
-package com.login.controller;
+package com.phoenixairline.controllers;
 
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
@@ -19,7 +19,7 @@ public class LogoutServlet extends HttpServlet {
         {
             session.invalidate(); //removes all session attributes bound to the session
             request.setAttribute("errMessage", "You have logged out successfully");
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/login.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.jsp");
             requestDispatcher.forward(request, response);
             System.out.println("Logged out");
         }

@@ -11,8 +11,6 @@ package com.phoenixairline.models;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import com.phoenixairline.models.User;
-import com.phoenixairline.models.ConnectToDB;
 
 public class RegisterDao {
 

@@ -4,7 +4,6 @@
  */
 package com.phoenixairline.models;
 
-import com.phoenixairline.models.ConnectToDB;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

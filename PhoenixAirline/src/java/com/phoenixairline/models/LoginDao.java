@@ -5,8 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.phoenixairline.models.User;
-import com.phoenixairline.models.ConnectToDB;
 
 public class LoginDao {
 

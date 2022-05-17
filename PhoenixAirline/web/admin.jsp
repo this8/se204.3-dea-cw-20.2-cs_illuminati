@@ -7,7 +7,7 @@
     <% //In case, if Admin session is not set, redirect to Login page
         if ((request.getSession(false).getAttribute("admin") == null)) {
     %>
-    <jsp:forward page="/views/login.jsp"></jsp:forward>
+    <jsp:forward page="/login.jsp"></jsp:forward>
     <%}%>
     <body>
         <center><h2>Admin Home</h2></center>

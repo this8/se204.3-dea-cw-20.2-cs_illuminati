@@ -79,7 +79,7 @@ public class ViewUsersServlet extends HttpServlet {
 
         request.setAttribute("result", userlist);
 
-        RequestDispatcher rd = request.getRequestDispatcher("views/admin_result.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("admin_result.jsp");
         rd.forward(request, response);
 
     }

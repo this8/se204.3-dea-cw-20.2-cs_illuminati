@@ -1,4 +1,4 @@
-package com.register.controller;
+package com.phoenixairline.controllers;
 
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
@@ -35,10 +35,10 @@ public class RegisterServlet extends HttpServlet {
 
         String result = registerDao.Registerindb(registerBean);
         if (result.equals("User is registered")) {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("views/login.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
             dispatcher.include(request, response);
         } else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("views/register.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("register.jsp");
             dispatcher.include(request, response);
         }
     }

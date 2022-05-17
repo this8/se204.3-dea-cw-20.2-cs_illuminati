@@ -7,7 +7,7 @@
     <% //In case, if StaffG1 session is not set, redirect to Login page
         if ((request.getSession(false).getAttribute("staffg1") == null)) {
     %>
-    <jsp:forward page="/views/login.jsp"></jsp:forward>
+    <jsp:forward page="/login.jsp"></jsp:forward>
     <%}%>
     <body>
         <center><h2>Grade 1 Staff Home</h2></center>

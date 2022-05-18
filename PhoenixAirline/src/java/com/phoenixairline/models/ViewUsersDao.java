@@ -15,24 +15,31 @@ public class ViewUsersDao {
 
     public List viewRow(String su) {
         List user_details = new ArrayList();
-        String full_nameDB = "";
-        String emailDB = "";
-        String user_typeDB = "";
 
         try {
             con = ConnectToDB.createConnection();
             statement = con.createStatement();
-            resultSet = statement.executeQuery("select * from user where Username like'%" + su + "%';");
+            resultSet = statement.executeQuery("select * from user where username like'%" + su + "%';");
 
             while (resultSet.next()) {
-                full_nameDB = resultSet.getString("FullName");
-                emailDB = resultSet.getString("Email");
-                user_typeDB = resultSet.getString("UserType");
-                System.out.println(user_typeDB);
+                String first_name = resultSet.getString("first_name");
+                String last_name = resultSet.getString("last_name");
+                String email = resultSet.getString("email");
+                String username = resultSet.getString("username");
+                String password = resultSet.getString("password");
+                String address = resultSet.getString("address");
+                String phone_number = resultSet.getString("phone_number");
+                String role = resultSet.getString("role");
+                System.out.println(role);
 
-                user_details.add(full_nameDB);
-                user_details.add(emailDB);
-                user_details.add(user_typeDB);
+                user_details.add(first_name);
+                user_details.add(last_name);
+                user_details.add(email);
+                user_details.add(username);
+                user_details.add(password);
+                user_details.add(address);
+                user_details.add(phone_number);
+                user_details.add(role);
                 user_details.add("<br>");
             }
         } catch (SQLException e) {

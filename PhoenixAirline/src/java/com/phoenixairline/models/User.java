@@ -2,25 +2,53 @@ package com.phoenixairline.models;
 
 public class User {
 
+    private String first_name;
+    private String last_name;
+    private String email;
     private String username;
     private String password;
-    private String full_name;
-    private String email;
-    private String user_type;
+    private String address;
+    private String phone_number;
+    private String role;
 
-    public User(String full_name, String email, String username, String password, String user_type) {
+    public User(String first_name, String last_name, String email, String username, String password, String address, String phone_number, String role) {
         super();
-        this.username = username;
-        this.password = password;
-        this.full_name = full_name;
+        this.first_name = first_name;
+        this.last_name = last_name;
         this.email = email;
         this.username = username;
         this.password = password;
-        this.user_type = user_type;
+        this.address = address;
+        this.phone_number = phone_number;
+        this.role = role;
     }
 
     public User() {
         super();
+    }
+
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getUsername() {
@@ -39,27 +67,27 @@ public class User {
         this.password = password;
     }
 
-    public String getFull_name() {
-        return full_name;
+    public String getAddress() {
+        return address;
     }
 
-    public void setFull_name(String full_name) {
-        this.full_name = full_name;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPhone_number() {
+        return phone_number;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
     }
 
-    public String getUser_type() {
-        return user_type;
+    public String getRole() {
+        return role;
     }
 
-    public void setUser_type(String user_type) {
-        this.user_type = user_type;
+    public void setRole(String role) {
+        this.role = role;
     }
 }

@@ -5,7 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
 public class LoginDao {
 
     public String authenticateUser(User loginBean) {
@@ -17,32 +16,40 @@ public class LoginDao {
         Statement statement = null;
         ResultSet resultSet = null;
 
-        String user_typeDB = "";
-        int is_approvedDB = 0;
+        String role = "";
+        int active_status = 0;
 
         try {
             con = ConnectToDB.createConnection();
             statement = con.createStatement();
-            resultSet = statement.executeQuery("select UserType,Approved from user where Username='" + username + "' && Password='" + password + "'");
+            resultSet = statement.executeQuery("select role,active_status from user where username='" + username + "' && password='" + password + "'");
 
             while (resultSet.next()) {
-                user_typeDB = resultSet.getString("UserType");
-                is_approvedDB = resultSet.getInt("Approved");
-                System.out.println(user_typeDB);
-                System.out.println(is_approvedDB);
+                role = resultSet.getString("role");
+                active_status = resultSet.getInt("active_status");
+                System.out.println(role);
+                System.out.println(active_status);
 
-                if (user_typeDB.equals("user")) {
-                    return "User_Role";
-                } else if (user_typeDB.equals("staffg1") && is_approvedDB == 1) {
-                    return "StaffG1_Role";
-                } else if (user_typeDB.equals("staffg2") && is_approvedDB == 1) {
-                    return "StaffG2_Role";
-                } else if (user_typeDB.equals("admin")) {
-                    return "Admin_Role";
+                if (active_status == 1) {
+                    switch (role) {
+                        case "user":
+                            return "User_Role";
+                        case "staffg1":
+                            return "StaffG1_Role";
+                        case "staffg2":
+                            return "StaffG2_Role";
+                        case "admin":
+                            return "Admin_Role";
+                        default:
+                            break;
+                    }
+                } else {
+                    return "Your account is not active";
                 }
+
             }
         } catch (SQLException e) {
         }
-        return "Invalid user credentials";
+        return "Incorrect Username or Password";
     }
 }

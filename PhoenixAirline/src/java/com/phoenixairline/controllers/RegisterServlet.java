@@ -24,13 +24,16 @@ public class RegisterServlet extends HttpServlet {
         System.out.println("inside post");
         response.setContentType("text/html");
 
-        String name = request.getParameter("full_name");
+        String first_name = request.getParameter("first_name");
+        String last_name = request.getParameter("last_name");
         String username = request.getParameter("username");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        String user_type = request.getParameter("user_type");
+        String address = request.getParameter("address");
+        String phone_number = request.getParameter("phone_number");
+        String role = request.getParameter("role");
 
-        User registerBean = new User(name, email, username, password, user_type);
+        User registerBean = new User(first_name, last_name, email, username, password, address, phone_number, role);
         RegisterDao registerDao = new RegisterDao();
 
         String result = registerDao.Registerindb(registerBean);
@@ -38,6 +41,7 @@ public class RegisterServlet extends HttpServlet {
             RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
             dispatcher.include(request, response);
         } else {
+            request.setAttribute("errMessage", result);
             RequestDispatcher dispatcher = request.getRequestDispatcher("register.jsp");
             dispatcher.include(request, response);
         }

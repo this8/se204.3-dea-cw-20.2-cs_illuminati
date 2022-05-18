@@ -78,5 +78,5 @@ public class LoginServlet extends HttpServlet {
             }
         } catch (IOException | ServletException e1) {
         }
-    } //End of doPost()
+    }
 }

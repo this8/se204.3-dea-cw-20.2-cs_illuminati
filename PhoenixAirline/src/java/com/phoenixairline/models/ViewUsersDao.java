@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.phoenixairline.models;
 
 import java.sql.Connection;
@@ -11,10 +7,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author yasas
- */
 public class ViewUsersDao {
 
     Connection con = null;
@@ -46,7 +38,5 @@ public class ViewUsersDao {
         } catch (SQLException e) {
         }
         return user_details;
-
     }
-
 }

@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
                     HttpSession session = request.getSession(); //Creating a session
                     session.setMaxInactiveInterval(2 * 60);
                     session.setAttribute("admin", username); //setting session attribute
-                    request.setAttribute("username", username);
+//                    request.setAttribute("username", username);
                     request.getRequestDispatcher("/admin.jsp").forward(request, response);
                     break;
                 }
@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
                     HttpSession session = request.getSession(); //Creating a session
                     session.setMaxInactiveInterval(10 * 60);
                     session.setAttribute("user", username); //setting session attribute
-                    request.setAttribute("username", username);
+//                    request.setAttribute("username", username);
                     request.getRequestDispatcher("/user.jsp").forward(request, response);
                     break;
                 }
@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
                     HttpSession session = request.getSession();
                     session.setMaxInactiveInterval(2 * 60);
                     session.setAttribute("staffg1", username);
-                    request.setAttribute("username", username);
+//                    request.setAttribute("username", username);
                     request.getRequestDispatcher("/staffg1.jsp").forward(request, response);
                     break;
                 }
@@ -66,7 +66,7 @@ public class LoginServlet extends HttpServlet {
                     HttpSession session = request.getSession();
                     session.setMaxInactiveInterval(2 * 60);
                     session.setAttribute("staffg2", username);
-                    request.setAttribute("username", username);
+//                    request.setAttribute("username", username);
                     request.getRequestDispatcher("/staffg2.jsp").forward(request, response);
                     break;
                 }

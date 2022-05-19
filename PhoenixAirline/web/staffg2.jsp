@@ -11,7 +11,7 @@
     <%}%>
     <body>
         <center><h2>Grade 2 Staff Home</h2></center>
-        Welcome <%=request.getAttribute("username")%>
+        Welcome <%=session.getAttribute("staffg2")%>
 
         <div style="text-align: right"><a href="<%=request.getContextPath()%>/LogoutServlet">Logout</a></div>
 

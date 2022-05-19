@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LoginDao {
 
@@ -48,8 +50,10 @@ public class LoginDao {
                 }
 
             }
+            con.close();
         } catch (SQLException e) {
         }
+
         return "Incorrect Username or Password";
     }
 }

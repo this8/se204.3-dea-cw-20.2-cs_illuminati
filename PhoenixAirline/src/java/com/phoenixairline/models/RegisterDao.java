@@ -40,7 +40,7 @@ public class RegisterDao {
             stmt.setString(9, role);
 
             i = stmt.executeUpdate();
-
+            con.close();
         } catch (SQLException e) {
 
         }

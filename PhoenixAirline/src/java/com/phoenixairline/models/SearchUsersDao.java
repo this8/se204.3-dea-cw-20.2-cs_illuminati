@@ -7,19 +7,27 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewUsersDao {
+public class SearchUsersDao {
 
     Connection con = null;
     Statement statement = null;
     ResultSet resultSet = null;
 
-    public List viewRow(String su) {
+    public List viewRow(String su, String st) {
         List user_details = new ArrayList();
 
         try {
             con = ConnectToDB.createConnection();
             statement = con.createStatement();
-            resultSet = statement.executeQuery("select * from user where username like'%" + su + "%';");
+
+            System.out.println(su);
+            System.out.println(st);
+
+            if (st.equals("username")) {
+                resultSet = statement.executeQuery("select * from user where username like'%" + su + "%';");
+            } else {
+                resultSet = statement.executeQuery("select * from user where email like'%" + su + "%';");
+            }
 
             while (resultSet.next()) {
                 String first_name = resultSet.getString("first_name");
@@ -42,6 +50,7 @@ public class ViewUsersDao {
                 user_details.add(role);
                 user_details.add("<br>");
             }
+            con.close();
         } catch (SQLException e) {
         }
         return user_details;

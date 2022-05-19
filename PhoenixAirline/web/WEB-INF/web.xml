@@ -20,8 +20,12 @@
         <servlet-class>com.phoenixairline.controllers.RegisterServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ViewUsersServlet</servlet-name>
-        <servlet-class>com.phoenixairline.controllers.ViewUsersServlet</servlet-class>
+        <servlet-name>SearchUsersServlet</servlet-name>
+        <servlet-class>com.phoenixairline.controllers.SearchUsersServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminDCServlet</servlet-name>
+        <servlet-class>com.phoenixairline.controllers.AdminDCServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AddFlightInfoServlet</servlet-name>
@@ -36,12 +40,16 @@
         <url-pattern>/RegisterServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ViewUsersServlet</servlet-name>
-        <url-pattern>/ViewUsersServlet</url-pattern>
+        <servlet-name>SearchUsersServlet</servlet-name>
+        <url-pattern>/SearchUsersServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminDCServlet</servlet-name>
+        <url-pattern>/AdminDCServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

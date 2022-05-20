@@ -21,7 +21,7 @@
                 Email:<input type="text" name="email" value="" /><br/>
                 Password:<input type="password" name="password" value="" /><br/>
                 Retype Password:<input type="password" name="r_password" value="" /><br/>
-                Address:<input type="text" name="address" value="" /><br/>
+                Address:<textarea id="" name="address" rows="4" cols="50"></textarea><br/>
                 Phone:<input type="text" name="phone_number" value="" /><br/>
                 User Type:<select name="role">
                     <option value="user">User</option>

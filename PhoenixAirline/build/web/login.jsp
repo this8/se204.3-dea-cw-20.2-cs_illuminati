@@ -9,7 +9,6 @@
     <body>
         <h1>Login</h1>
         <div>
-
             <form name="login" action="<%=request.getContextPath()%>/LoginServlet" method="post">
 
                 <table align="center">

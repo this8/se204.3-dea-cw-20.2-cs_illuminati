@@ -48,7 +48,6 @@ public class SearchUsersDao {
                 user_details.add(address);
                 user_details.add(phone_number);
                 user_details.add(role);
-                user_details.add("<br>");
             }
             con.close();
         } catch (SQLException e) {

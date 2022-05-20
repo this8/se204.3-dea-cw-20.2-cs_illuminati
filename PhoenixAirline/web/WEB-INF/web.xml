@@ -23,6 +23,14 @@
         <servlet-name>ViewUsersServlet</servlet-name>
         <servlet-class>com.phoenixairline.controllers.ViewUsersServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SelectTicketServlet</servlet-name>
+        <servlet-class>com.phoenixairline.controllers.ticketmanagement.SelectTicketServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CreateTicketServlet</servlet-name>
+        <servlet-class>com.phoenixairline.controllers.ticketmanagement.CreateTicketServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddFlightInfoServlet</servlet-name>
         <url-pattern>/AddFlightInfoServlet</url-pattern>
@@ -42,6 +50,14 @@
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SelectTicketServlet</servlet-name>
+        <url-pattern>/SelectTicketServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateTicketServlet</servlet-name>
+        <url-pattern>/CreateTicketServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

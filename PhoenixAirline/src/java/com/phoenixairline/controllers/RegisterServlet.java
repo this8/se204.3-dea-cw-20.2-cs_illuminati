@@ -35,6 +35,7 @@ public class RegisterServlet extends HttpServlet {
 
         User registerBean = new User(first_name, last_name, email, username, password, address, phone_number, role);
         RegisterDao registerDao = new RegisterDao();
+        
 
         String result = registerDao.Registerindb(registerBean);
         if (result.equals("User is registered")) {

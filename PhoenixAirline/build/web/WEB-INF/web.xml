@@ -5,7 +5,7 @@
     </welcome-file-list>
     <servlet>
         <servlet-name>AddFlightInfoServlet</servlet-name>
-        <servlet-class>com.phoenixairline.controllers.AddFlightInfoServlet</servlet-class>
+        <servlet-class>com.phoenixairline.controllers.FlightControllers.AddFlightInfoServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
@@ -22,6 +22,22 @@
     <servlet>
         <servlet-name>ViewUsersServlet</servlet-name>
         <servlet-class>com.phoenixairline.controllers.ViewUsersServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateFlightInfoServlet</servlet-name>
+        <servlet-class>com.phoenixairline.controllers.FlightControllers.UpdateFlightInfoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteFlightInfoServlet</servlet-name>
+        <servlet-class>com.phoenixairline.controllers.FlightControllers.DeleteFlightInfoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewFlightInfoServlet</servlet-name>
+        <servlet-class>com.phoenixairline.controllers.FlightControllers.ViewFlightInfoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchFlightInfoServlet</servlet-name>
+        <servlet-class>com.phoenixairline.controllers.FlightControllers.SearchFlightInfoServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AddFlightInfoServlet</servlet-name>
@@ -42,6 +58,22 @@
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateFlightInfoServlet</servlet-name>
+        <url-pattern>/UpdateFlightInfoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteFlightInfoServlet</servlet-name>
+        <url-pattern>/DeleteFlightInfoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewFlightInfoServlet</servlet-name>
+        <url-pattern>/ViewFlightInfoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchFlightInfoServlet</servlet-name>
+        <url-pattern>/SearchFlightInfoServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

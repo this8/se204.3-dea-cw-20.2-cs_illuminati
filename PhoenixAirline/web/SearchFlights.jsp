@@ -17,9 +17,9 @@
             <form method="post" action="SearchFlightInfoServlet">
                 Input search value<input type="text" name="searchData" />
                 Select option to Search data  <select name="searchCategory">
-                    <option value="takeoffDate">Takeoff Date</option>
-                    <option value="LandingDate">Landing Date</option>
-                    <option value="LandingAirport">Landing Airport</option>
+                    <option value="takeoff_date">Takeoff Date</option>
+                    <option value="landing_date">Landing Date</option>
+                    <option value="landing_airport">Landing Airport</option>
                 </select>
                 <input type="submit" name="Search"/>
                 <input type="reset" name="Cancel"/>

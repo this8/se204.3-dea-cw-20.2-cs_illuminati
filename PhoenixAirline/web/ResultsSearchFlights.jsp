@@ -18,7 +18,7 @@
     <body>
         <h1>Searched Results</h1>
         
-          
+    
          <%
             List searchFlight_details = new ArrayList();
             searchFlight_details = (List) request.getAttribute("result");

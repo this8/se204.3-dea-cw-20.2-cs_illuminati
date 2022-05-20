@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class LoginDao {
 
@@ -45,6 +43,7 @@ public class LoginDao {
                         default:
                             break;
                     }
+                    //session method
                 } else {
                     return "Your account is not active";
                 }

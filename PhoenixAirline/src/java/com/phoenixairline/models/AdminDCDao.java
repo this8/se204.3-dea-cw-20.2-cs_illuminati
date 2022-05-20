@@ -33,16 +33,25 @@ public class AdminDCDao {
                 String phone_number = resultSet.getString("phone_number");
                 String role = resultSet.getString("role");
                 System.out.println(first_name);
-
+                
+//                can add tr td to whlie loop in jsp for less lines
+                user_details.add("<tr><td>");
                 user_details.add(first_name);
+                user_details.add("</td><td>");
                 user_details.add(last_name);
+                user_details.add("</td><td>");
                 user_details.add(email);
+                user_details.add("</td><td>");
                 user_details.add(username);
+                user_details.add("</td><td>");
                 user_details.add(password);
+                user_details.add("</td><td>");
                 user_details.add(address);
+                user_details.add("</td><td>");
                 user_details.add(phone_number);
+                user_details.add("</td><td>");
                 user_details.add(role);
-                user_details.add("<br>");
+                user_details.add("</td></tr>");
             }
             con.close();
         } catch (SQLException e) {

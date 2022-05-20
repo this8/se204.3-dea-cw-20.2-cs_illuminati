@@ -30,6 +30,7 @@ public class LoginServlet extends HttpServlet {
 
         LoginDao loginDao = new LoginDao();
 
+        //get ip address
         try {
             String userValidate = loginDao.authenticateUser(loginBean);
 

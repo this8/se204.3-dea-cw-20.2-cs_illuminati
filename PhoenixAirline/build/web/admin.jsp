@@ -20,25 +20,38 @@
 
 
 
+
         Welcome <%=session.getAttribute("admin")%>
 
         <div style="text-align: right"><a href="<%=request.getContextPath()%>/LogoutServlet">Logout</a></div>
 
-        <form name="monitor" action="<%=request.getContextPath()%>/AdminDCServlet" method="POST">
-            <input type="submit" value="Monitor" name="monitor"  />
-        </form>
+
 
         <%
-            if ((request.getAttribute("dc") != null)) {
-                List list = new ArrayList();
-                list = (List) request.getAttribute("dc");
-                Iterator it = list.iterator();
-                while (it.hasNext()) {
-                    out.println(it.next());
-                }
+            if ((request.getAttribute("dc") == null)) {
+                request.getRequestDispatcher("AdminDCServlet").forward(request, response);
             }
 
         %>
+
+        <table border="1">
+            <thead>
+            </thead>
+            <tbody>
+                <%
+                    if ((request.getAttribute("dc") != null)) {
+                        List list = new ArrayList();
+                        list = (List) request.getAttribute("dc");
+                        Iterator it = list.iterator();
+                        while (it.hasNext()) {
+                            out.println(it.next());
+
+                        }
+                    }
+
+                %>
+            </tbody>
+        </table>
 
         <form action="SearchUsersServlet" method="POST">
             <h3>View Users</h3>

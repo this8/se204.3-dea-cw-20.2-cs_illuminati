@@ -3,6 +3,7 @@
 <html>
     <head>
         <title>Grade 1 Staff Page</title>
+     
     </head>
     <% //In case, if StaffG1 session is not set, redirect to Login page
         if ((request.getSession(false).getAttribute("staffg1") == null)) {
@@ -13,6 +14,8 @@
         <center><h2>Grade 1 Staff Home</h2></center>
 
         Welcome <%=request.getAttribute("username")%>
+        
+        
 
         <div style="text-align: right"><a href="<%=request.getContextPath()%>/LogoutServlet">Logout</a></div>
 
